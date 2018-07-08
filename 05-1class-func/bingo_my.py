@@ -1,20 +1,3 @@
-"""
-# BEGIN BINGO_DEMO
-
->>> bingo = BingoCage(range(3))
->>> bingo.pick()
-1
->>> bingo()
-0
->>> callable(bingo)
-True
-
-# END BINGO_DEMO
-
-"""
-
-# BEGIN BINGO
-
 import random
 
 class BingoCage:
@@ -23,7 +6,10 @@ class BingoCage:
         self._items = list(items)  # <1>
         random.shuffle(self._items)  # <2>
 
-    def pick(self):  # <3>
+    def pick(self):
+        #first
+        """some comment
+        and do something"""
         try:
             return self._items.pop()
         except IndexError:
@@ -34,7 +20,9 @@ class BingoCage:
 
 # END BINGO
 bingo = BingoCage(range(3))
-bingo.pick()
-bingo()
+print(bingo.pick())
+print(bingo())
 
 callable(bingo)
+random.shuffle.__doc__
+print(bingo.pick.__doc__)
