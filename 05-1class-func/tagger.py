@@ -42,3 +42,16 @@ def tag(name, *content, cls=None, **attrs):
     else:
         return '<%s%s />' % (name, attr_str)
 # END TAG_FUNC
+
+tag('br')  # <1>
+
+tag('p', 'hello')  # <2>
+
+print(tag('p', 'hello', 'world'))
+tag('p', 'hello', id=33)  # <3>
+
+print(tag('p', 'hello', 'world', cls='sidebar'))  # <4>
+tag(content='testing', name="img")  # <5>
+my_tag = {'name': 'img', 'title': 'Sunset Boulevard',
+          'src': 'sunset.jpg', 'cls': 'framed'}
+tag(**my_tag)  # <6>
